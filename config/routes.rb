@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   root to: 'homes#top'
   resources :users,only: [:show,:index,:edit,:update] do
     resource :relationships, only: [:create, :destroy]
-    get 'followings' => 'relationships#followings', as: 'followings'
-    get 'followers' => 'relationships#followers', as: 'followers'
+    get 'followings' => 'users#followings', as: 'followings'
+    get 'followers' => 'users#followers', as: 'followers'
   end
   resources :books do
     resources :book_comments, only: [:create, :destroy]

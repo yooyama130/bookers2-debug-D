@@ -1,0 +1,8 @@
+<div class = "container">
+  <h1>Follow Users</h1>
+  <% if @followers.blank? %>
+    <p>ユーザがいません</p>
+  <% else %>
+    <%= render 'index',users: @followers %>
+  <% end %>
+</div>
