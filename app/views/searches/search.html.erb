@@ -1,8 +1,9 @@
 <div class = "container">
-  <h1><%= "#{@list_name}s search for \"#{@search}\"" %></h1>
-  <% if @list_name =="Book" %>
-    <%= render 'books/index', books: @searches%>
+  <% if @model_name =="Book" %>
+    <h1><%= "Books search for \"#{@search}\"" %></h1>
+    <%= render 'books/index', books: @searches %>
   <% elsif @list_name == "User" %>
+    <h1><%= "Users search for \"#{@search}\"" %></h1>
     <%= render 'users/index',users: @searches %>
   <% end %>
 </div>

@@ -28,6 +28,19 @@ class User < ApplicationRecord
     followings.include?(user)
  end
 
+  #検索する
+  def self.search_for(search, how_to_search)
+    if how_to_search == '完全一致'
+      User.where(name: search)
+    elsif how_to_searchmethod == '前方一致'
+      User.where('name LIKE ?', search + '%')
+    elsif how_to_search == '後方一致'
+      User.where('name LIKE ?', '%' + search)
+    else
+      User.where('name LIKE ?', '%' + search + '%')
+    end
+  end
+
 
   attachment :profile_image, destroy: false
 
