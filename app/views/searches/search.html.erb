@@ -1,0 +1,8 @@
+<div class = "container">
+  <h1><%= "#{@list_name}s search for \"#{@search}\"" %></h1>
+  <% if @list_name =="Book" %>
+    <%= render 'books/index', books: @searches%>
+  <% elsif @list_name == "User" %>
+    <%= render 'users/index',users: @searches %>
+  <% end %>
+</div>
