@@ -17,3 +17,5 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+// 13行目、16行目にてjqueryを読み込んでいる。
