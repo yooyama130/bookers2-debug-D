@@ -17,5 +17,6 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+//= require jquery.raty.js
 
 // 13行目、16行目にてjqueryを読み込んでいる。

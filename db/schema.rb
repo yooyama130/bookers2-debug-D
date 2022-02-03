@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 2021_11_19_001255) do
     t.text "comment"
     t.integer "user_id"
     t.integer "book_id"
+    t.float "evaluation"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
