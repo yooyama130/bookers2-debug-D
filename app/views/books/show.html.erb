@@ -27,6 +27,8 @@
           <td>
           <p><%= @book.book_comments.count %>コメント</p>
           </td>
+          <!--評価-->
+          <td class="book-evaluation" data-score="<%= @book.evaluation %>"></td>
           <% if @user == current_user %>
             <td><%= link_to 'Edit', edit_book_path(@book), class: "btn btn-sm btn-success edit_book_#{@book.id}" %></td>
             <td><%= link_to 'Destroy', book_path(@book), method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-sm btn-danger destroy_book_#{@book.id}"%></td>
@@ -49,3 +51,13 @@
     </div>
   </div>
 </div>
+
+<script>
+  $('.book-evaluation').raty({
+    readOnly: true,
+    score: function() {
+      return $(this).attr('data-score');
+    },
+    path: '/assets/'
+  });
+</script>
