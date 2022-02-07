@@ -10,7 +10,17 @@ class BooksController < ApplicationController
   end
 
   def index
-    @books = Book.all
+    # ソートリンクをクリックしたときの処理。パラメータが送信されていればソートする。なければ、全てをID順に取得
+    if params[:sort].present?
+      case params[:sort]
+        when "latest"
+          @books = Book.all.order(created_at: "DESC")
+        when "high_evaluation"
+          @books = Book.all.order(evaluation: "DESC")
+      end
+    else
+      @books = Book.all
+    end
     @new_book = Book.new
   end
 
