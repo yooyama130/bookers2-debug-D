@@ -18,6 +18,12 @@
           <td><%= link_to @book.title, book_path(@book) %></td>
           <td><%= @book.body %></td>
           <td>
+            <!--カテゴリーがあれば表示する-->
+            <% if @book.category.present? %>
+              <%= link_to @book.category, category_search_book_path(@book.category) %>
+            <% end %>
+          </td>
+          <td>
              <!--いいね機能-->
             <div id = "favorite_buttons_<%= @book.id %>">
               <%= render "favorites/favorite", book: @book %>

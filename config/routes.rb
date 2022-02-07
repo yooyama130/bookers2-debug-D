@@ -13,4 +13,5 @@ Rails.application.routes.draw do
     resource :favorites, only: [:create, :destroy]
   end
   get 'books/sort/:sort', to: 'books#index', as: 'sort_book'
+  get 'books/category_search/:category', to: 'books#category_search', as: 'category_search_book'
 end
